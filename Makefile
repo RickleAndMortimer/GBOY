@@ -1,2 +1,5 @@
-gpu : gpu.cpp
-	g++ gpu.cpp test_gpu.cpp -o gpu `sdl2-config --cflags --libs`
+gpu : src/gpu.cpp test/test_gpu.cpp
+	mkdir -p bin
+	g++ src/gpu.cpp test/test_gpu.cpp -Isrc/ -o bin/gpu `sdl2-config --cflags --libs`
+clean : 
+	rm -rf bin/
